@@ -137,6 +137,7 @@ main {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 2;
     flex: 0 0 auto;
+    pointer-events: auto;
 }
 
 .hour-nav-btn:hover, .day-nav-btn:hover {
@@ -156,11 +157,16 @@ main {
 .hourly-forecast, .daily-forecast {
     display: flex;
     overflow-x: hidden;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: auto;
+    pointer-events: none;
     padding: 10px 0;
     margin: 0 5px;
     flex: 1;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 .hourly-item, .daily-item {
@@ -177,6 +183,7 @@ main {
     -webkit-user-select: none;
     margin-right: 5px;
     scroll-snap-align: start;
+    pointer-events: auto;
 }
 
 .hourly-item:last-child, .daily-item:last-child {
