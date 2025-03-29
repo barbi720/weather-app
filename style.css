@@ -155,23 +155,12 @@ main {
 
 .hourly-forecast, .daily-forecast {
     display: flex;
-    overflow-x: auto;
+    overflow-x: hidden;
     padding: 10px 0;
     margin: 0 5px;
     flex: 1;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    cursor: grab;
-}
-
-.hourly-forecast::-webkit-scrollbar, .daily-forecast::-webkit-scrollbar {
-    display: none;
-}
-
-.hourly-forecast:active, .daily-forecast:active {
-    cursor: grabbing;
 }
 
 .hourly-item, .daily-item {
@@ -290,7 +279,6 @@ footer {
     }
     
     .hourly-forecast, .daily-forecast {
-        touch-action: pan-x;
         padding: 10px 5px;
     }
     
