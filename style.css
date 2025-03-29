@@ -155,12 +155,23 @@ main {
 
 .hourly-forecast, .daily-forecast {
     display: flex;
-    overflow-x: hidden;
+    overflow-x: auto;
     padding: 10px 0;
     margin: 0 5px;
     flex: 1;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    cursor: grab;
+}
+
+.hourly-forecast::-webkit-scrollbar, .daily-forecast::-webkit-scrollbar {
+    display: none;
+}
+
+.hourly-forecast:active, .daily-forecast:active {
+    cursor: grabbing;
 }
 
 .hourly-item, .daily-item {
@@ -271,6 +282,34 @@ footer {
     
     .weather-card {
         margin-bottom: 0;
+    }
+    
+    .hourly-forecast-wrapper, .daily-forecast-wrapper {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .hourly-forecast, .daily-forecast {
+        touch-action: pan-x;
+        padding: 10px 5px;
+    }
+    
+    .hour-nav-btn, .day-nav-btn {
+        width: 30px;
+        height: 30px;
+        opacity: 0.8;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+    }
+    
+    .hour-nav-btn:first-child, .day-nav-btn:first-child {
+        left: 0;
+    }
+    
+    .hour-nav-btn:last-child, .day-nav-btn:last-child {
+        right: 0;
     }
 }
 
